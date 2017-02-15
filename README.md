@@ -18,11 +18,11 @@ Examples:
 /api/geolocate/Milano
 ~~~
   {
-    success: true, 
-    data: {
-      comune: "Milano",
-      lat: 45.4654219,
-      lng: 9.1859243
+    "success": true, 
+    "data": {
+      "comune": "Milano",
+      "lat": 45.4654219,
+      "lng": 9.1859243
     }
   }
 ~~~
@@ -30,7 +30,7 @@ Examples:
 /api/geolocate/Tokyo
 ~~~
   { 
-    success: false,
-    error: "not found"
+    "success": false,
+    "error": "not found"
   }
 ~~~
