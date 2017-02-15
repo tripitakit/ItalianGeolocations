@@ -21,8 +21,8 @@ Examples:
     "success": true, 
     "data": {
       "comune": "Milano",
-      "lat": 45.4654219,
-      "lng": 9.1859243
+      "lat": "45.4654219",
+      "lng": "9.1859243"
     }
   }
 ~~~
