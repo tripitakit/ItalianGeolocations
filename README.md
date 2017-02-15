@@ -6,12 +6,17 @@ ItalianGeolocations is an API server offering Italian cities' geolocations
   * This project is in early alpha development stage
   * It's more a kind of playgorund to teach myself some Elixir (for great good!) than a real thing
   * Warning: some coordinates are clearly wrong! Will be fixed as soon as I get them all correct
+  * The lookup in the ETS table is whole-word and case sensitive
 
 
 ## API
 
-GET /api/geolocate/<city_name>
+GET /api/geolocate/city
 
+Examples:
+
+/api/geolocate/Milano
+~~~
 Success response:
   {
     success: true, 
@@ -21,10 +26,13 @@ Success response:
       lng: 9.1859243
     }
   }
+~~~
 
-
+/api/geolocate/Tokyo
 Error response:
+~~~
   { 
     success: false,
     error: "not found"
   }
+~~~
