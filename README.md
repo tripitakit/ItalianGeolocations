@@ -11,7 +11,7 @@ ItalianGeolocations is an API server offering Italian cities' geolocations
 
 ## API
 
-GET /api/geolocate/city
+### GET /api/geolocate/city
 
 Examples:
 
