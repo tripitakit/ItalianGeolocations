@@ -1,2 +1,3 @@
 *.ex linguist-language=Elixir
 *.exs linguist-language=Elixir
+/priv linguist-vendored=true
