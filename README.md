@@ -17,7 +17,6 @@ Examples:
 
 /api/geolocate/Milano
 ~~~
-Success response:
   {
     success: true, 
     data: {
@@ -29,7 +28,6 @@ Success response:
 ~~~
 
 /api/geolocate/Tokyo
-Error response:
 ~~~
   { 
     success: false,
