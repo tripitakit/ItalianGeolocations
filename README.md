@@ -8,16 +8,18 @@ ItalianGeolocations API serves Italian cities' geolocations
 
 ## API
 
-### GET /api/geolocate/city
+### GET /api/geolocate/{An Italian City Name}
 
 Examples:
 
 /api/geolocate/Milano
+
+Status 200
 ~~~
   {
     "success": true,
     "data": {
-      "comune": "Milano",
+      "name": "Milano",
       "lat": "45.4654219",
       "lng": "9.1859243"
     }
@@ -25,6 +27,8 @@ Examples:
 ~~~
 
 /api/geolocate/Tokyo
+
+Status 200
 ~~~
   {
     "success": false,
