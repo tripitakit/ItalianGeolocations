@@ -6,7 +6,6 @@ ItalianGeolocations API serves Italian cities' geolocations
   * This project is in early alpha stage
   * The lookup in the ETS table is whole-word and case sensitive
 
-
 ## API
 
 ### GET /api/geolocate/city
