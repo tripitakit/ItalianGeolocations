@@ -5,14 +5,15 @@ ItalianGeolocations API serves Italian cities' geolocations
   * Developed with Elixir/Phoenix and ETS as in-memory database
   * City names queries are case-insensitive and whole-word (so -atm- no partial names, sorry)
   * It gently handles request errors (see the examples below)
+  * Deployed in development at http://www.codestep.it:4000
 
 ## API
 
-### GET /api/geolocate/{An Italian city name}
+### GET /api/v1/geolocate/{An Italian city name}
 
 Examples:
 
-### /api/geolocate/milano
+### http://www.codestep.it:4000/api/geolocate/milano
 
 Status 200 OK
 ~~~
@@ -27,7 +28,7 @@ Status 200 OK
   }
 ~~~
 
-### /api/geolocate/tokyo
+### http://www.codestep.it:4000/api/geolocate/tokyo
 
 Status 200 OK
 ~~~
@@ -42,7 +43,7 @@ Status 200 OK
   }
 ~~~
 
-### /api/geolocate
+### http://www.codestep.it:4000/api/geolocate
 
 Status 400 BAD REQUEST
 ~~~
@@ -57,8 +58,7 @@ Status 400 BAD REQUEST
   }
 ~~~
 
-
-### /api/foo
+### http://www.codestep.it:4000/api/foo
 
 Status 404 NOT FOUND
 ~~~
@@ -73,8 +73,10 @@ Status 404 NOT FOUND
   }
 ~~~
 
-### /bar
+### http://www.codestep.it:4000/bar
+
 Status 404 NOT FOUND
+~~~
 {
 	"success": false,
 	"status": 404,
@@ -84,3 +86,4 @@ Status 404 NOT FOUND
 		"details": "You requested a non-existent route"
 	}
 }
+~~~
