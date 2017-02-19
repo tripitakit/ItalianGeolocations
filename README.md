@@ -4,11 +4,11 @@ ItalianGeolocations API serves Italian cities' geolocations
 
   * Developed with Elixir/Phoenix and ETS as in-memory database
   * This project is in early alpha stage
-  * The lookup in the ETS table is whole-word and case sensitive
+  * City names queries are case-insensitive but whole-word (no partial names)
 
 ## API
 
-### GET /api/geolocate/{An Italian City Name}
+### GET /api/geolocate/{An Italian city name}
 
 Examples:
 

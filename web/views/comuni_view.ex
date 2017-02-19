@@ -7,7 +7,7 @@ defmodule ItalianGeolocations.ComuniView do
         %{
           success: true,
           data: %{
-            name: data.comune,
+            name: data.name,
             lat: data.lat,
             lng: data.lng
           }
