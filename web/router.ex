@@ -16,7 +16,8 @@ defmodule ItalianGeolocations.Router do
 
   scope "/", ItalianGeolocations do
     pipe_through :api
-    get "/:something", BadRequestsController, :invalid_root_request
+    get "/:something", BadRequestsController, :invalid_route_request
+    get "/", BadRequestsController, :invalid_root_request
   end
   
 end

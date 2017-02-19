@@ -31,6 +31,7 @@ defmodule ItalianGeolocations.Mixfile do
     [{:phoenix, "~> 1.2.1"},
      {:phoenix_pubsub, "~> 1.0"},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:logger_file_backend, "0.0.4"}]
   end
 end

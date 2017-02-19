@@ -7,8 +7,13 @@ defmodule ItalianGeolocations.BadRequestsController do
   end
 
 
-  def invalid_root_request(conn, %{"something" => something}) do
+  def invalid_route_request(conn, %{"something" => something}) do
     error = {"/#{something}", "You requested a non-existent route"}
+    respond_invalid_request_with(conn, error)
+  end
+
+  def invalid_root_request(conn, _) do
+    error = {"/", "You requested a non-existent route"}
     respond_invalid_request_with(conn, error)
   end
 
