@@ -8,5 +8,6 @@ defmodule ItalianGeolocations.Router do
   scope "/api", ItalianGeolocations do
     pipe_through :api
     get "/geolocate/:comune", ComuniController, :show
+    get "/geolocate", ComuniController, :invalid_param
   end
 end

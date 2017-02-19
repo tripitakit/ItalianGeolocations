@@ -12,9 +12,9 @@ ItalianGeolocations API serves Italian cities' geolocations
 
 Examples:
 
-/api/geolocate/Milano
+GET /api/geolocate/Milano
 
-Status 200
+Status 200 OK
 ~~~
   {
     "success": true,
@@ -26,12 +26,22 @@ Status 200
   }
 ~~~
 
-/api/geolocate/Tokyo
+GET /api/geolocate/Tokyo
 
-Status 200
+Status 200 OK
 ~~~
   {
     "success": false,
     "error": "not found"
+  }
+~~~
+
+GET /api/geolocate
+
+Status 400 BAD REQUEST
+~~~
+  {
+    "success": false,
+    "error": "you didn't provide a city-name to geolocate"
   }
 ~~~
