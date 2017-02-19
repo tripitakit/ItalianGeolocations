@@ -3,10 +3,9 @@
 ItalianGeolocations API serves Italian cities' geolocations
 
   * Developed with Elixir/Phoenix and ETS as in-memory database
-  * City names queries are case-insensitive and whole-word (so -atm- no partial names, sorry)
-  * It gently handles request errors (see the examples below)
-  * Deployed in development at http://www.codestep.it:4000
+  * City names queries are case-insensitive and whole-word
 
+  
 ## API
 
 ### GET /api/v1/geolocate/{An Italian city name}
