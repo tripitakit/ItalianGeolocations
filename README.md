@@ -3,7 +3,7 @@
 ItalianGeolocations API serves Italian cities' geolocations
 
   * Developed with Elixir/Phoenix and ETS as in-memory database
-  * City names queries are case-insensitive but whole-word (so -atm- no partial names, sorry)
+  * City names queries are case-insensitive and whole-word (so -atm- no partial names, sorry)
   * It gently handles request errors (see the examples below)
 
 ## API
@@ -12,12 +12,13 @@ ItalianGeolocations API serves Italian cities' geolocations
 
 Examples:
 
-GET /api/geolocate/milano
+### /api/geolocate/milano
 
 Status 200 OK
 ~~~
   {
     "success": true,
+    "status": 200,
     "data": {
       "name": "Milano",
       "lat": "45.4654219",
@@ -26,7 +27,7 @@ Status 200 OK
   }
 ~~~
 
-GET /api/geolocate/tokyo
+### /api/geolocate/tokyo
 
 Status 200 OK
 ~~~
@@ -41,7 +42,7 @@ Status 200 OK
   }
 ~~~
 
-GET /api/geolocate
+### /api/geolocate
 
 Status 400 BAD REQUEST
 ~~~
@@ -57,7 +58,7 @@ Status 400 BAD REQUEST
 ~~~
 
 
-GET /api/foo
+### /api/foo
 
 Status 404 NOT FOUND
 ~~~
