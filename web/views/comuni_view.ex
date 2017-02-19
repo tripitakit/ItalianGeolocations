@@ -6,6 +6,7 @@ defmodule ItalianGeolocations.ComuniView do
       {:ok, data} ->
         %{
           success: true,
+          status: 200,
           data: %{
             name: data.name,
             lat: data.lat,
@@ -13,12 +14,20 @@ defmodule ItalianGeolocations.ComuniView do
           }
         }
 
-      {:error, :not_found} ->
+      {:error, :not_found, name} ->
         %{
           success: false,
-          error: :not_found
+          status: 200,
+          errors: %{
+            source: "/api/geolocate/#{name}",
+            title: "City not found",
+            details: "Sorry, we could not find the city-name you asked for"
+          }
         }
     end
   end
 
 end
+
+
+

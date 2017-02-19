@@ -13,7 +13,7 @@ defmodule ItalianGeolocations.EtsServer do
 
   def fetch(comune) do
     case lookup(comune) do
-      {:not_found} -> {:error, :not_found}
+      {:not_found} -> {:error, :not_found, comune}
       {:found, result} -> {:ok, result}
     end
   end
