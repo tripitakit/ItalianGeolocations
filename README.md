@@ -72,3 +72,15 @@ Status 404 NOT FOUND
     }
   }
 ~~~
+
+### /bar
+Status 404 NOT FOUND
+{
+	"success": false,
+	"status": 404,
+	"errors": {
+		"title": "Invalid Request",
+		"source": "/bar",
+		"details": "You requested a non-existent route"
+	}
+}
