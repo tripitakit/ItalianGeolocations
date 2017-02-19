@@ -24,5 +24,5 @@ config :logger, format: "$time &metadata [$level] $message\n",
 
 config :logger, :development_log,
   path: "log/development.log",
-  level: :info,
+  level: :debug,
   metadata: [:ip]
