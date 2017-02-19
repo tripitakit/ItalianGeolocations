@@ -1,5 +1,4 @@
 defmodule ItalianGeolocations.LogIp do
-  import Plug.Conn
 
   def init(_), do: nil
 
