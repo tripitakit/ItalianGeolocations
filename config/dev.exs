@@ -19,9 +19,10 @@ config :italian_geolocations, ItalianGeolocations.Endpoint,
 config :phoenix, :stacktrace_depth, 20
 
 
-config :logger, format: "$time [$level] $message\n",
+config :logger, format: "$time &metadata [$level] $message\n",
   backends: [{LoggerFileBackend, :development_log}, :console]
 
 config :logger, :development_log,
   path: "log/development.log",
-  level: :info
+  level: :info,
+  metadata: [:ip]

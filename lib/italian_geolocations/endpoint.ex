@@ -18,7 +18,10 @@ defmodule ItalianGeolocations.Endpoint do
   end
 
   plug Plug.RequestId
+  plug ItalianGeolocations.LogIp
   plug Plug.Logger
+
+
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
