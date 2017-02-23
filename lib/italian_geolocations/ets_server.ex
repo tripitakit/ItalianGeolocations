@@ -1,11 +1,23 @@
 defmodule ItalianGeolocations.EtsServer do
   @moduledoc """
     A module providing an in-memory database using an ETS table.
-    ItalianGeolocations.EtsServer uses the GenServer behavior
+    ItalianGeolocations.EtsServer uses the GenServer behavior.
+
     It initializes and populates an ets_table named :coordinate_comuni
     with records (as tuples) containing the name of italian cities and their coordinates.
+    The data are loaded and parsed from the .csv file /data/coordinate_comuni.csv.
     The first element of the record tuple is the downcased city name, which is used
     to lookup city's data by matching it with the downcased request's parameter.
+
+    Client requests (from ComuniController's show function) invoke the fetch/1 public function,
+    which receives a param interpreted as a city-name.
+    fetch/1 delegates the query to the lookup/1 private function,
+    which handles the query by sending to the server api a {:lookup, comune} message,
+    it receives back the server response and returns the result or a :not_found error.
+
+    The handle_call server function does the actual lookup in the ets table
+    for the searched city name and responds either with {:not_found} or {:found, results}
+
   """
   use GenServer
 
