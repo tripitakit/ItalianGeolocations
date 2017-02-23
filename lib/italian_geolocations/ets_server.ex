@@ -16,7 +16,7 @@ defmodule ItalianGeolocations.EtsServer do
     it receives back the server response and returns the result or a :not_found error.
 
     The handle_call server function does the actual lookup in the ets table
-    for the searched city name and responds either with {:not_found} or {:found, results}
+    for the searched city name and responds either with {:not_found} or {:found, result}
 
   """
   use GenServer
