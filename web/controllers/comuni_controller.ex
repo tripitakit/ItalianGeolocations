@@ -6,22 +6,7 @@ defmodule ItalianGeolocations.ComuniController do
     results = EtsServer.fetch(comune)
     render conn, "show.json", results: results
   end
-
-  def null_param(conn, _params) do
-    conn
-    |> put_status(400)
-    |> json( %{
-                success: false,
-                status: 400,
-                errors: %{
-                  source: "/api/geolocate",
-                  title: "Invalid Request",
-                  details: "You didn't provide a city-name to geolocate"
-                }
-              }
-            )
-  end
-
+  
 end
 
 

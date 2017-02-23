@@ -1,4 +1,11 @@
 defmodule ItalianGeolocations do
+  @moduledoc """
+    A Phoenix application which serves an API responding to italian cities
+    geolocation queries by city name.
+    It is nothing more than a toy project to teach myself some Elixir/Phoenix and ETS.
+    The only API provided by the application is /api/geolocate/<city name>.
+    It also attempts to gently handle bad requests with json error responses.
+  """
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html

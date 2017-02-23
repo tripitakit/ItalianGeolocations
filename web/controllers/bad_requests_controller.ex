@@ -6,9 +6,19 @@ defmodule ItalianGeolocations.BadRequestsController do
     respond_invalid_request_with(conn, error)
   end
 
+  def invalid_sub_api_request(conn, %{"something" => something, "someother" => someother}) do
+    error = {"/api/#{something}/#{someother}", "You requested a non-existent API"}
+    respond_invalid_request_with(conn, error)
+  end
+
 
   def invalid_route_request(conn, %{"something" => something}) do
     error = {"/#{something}", "You requested a non-existent route"}
+    respond_invalid_request_with(conn, error)
+  end
+
+  def invalid_sub_route_request(conn, %{"something" => something, "someother" => someother}) do
+    error = {"/#{something}/#{someother}", "You requested a non-existent route"}
     respond_invalid_request_with(conn, error)
   end
 
@@ -31,5 +41,21 @@ defmodule ItalianGeolocations.BadRequestsController do
                   details: details
                 }
             })
+  end
+
+
+  def null_param(conn, _params) do
+    conn
+    |> put_status(400)
+    |> json( %{
+                success: false,
+                status: 400,
+                errors: %{
+                  source: "/api/geolocate",
+                  title: "Invalid Request",
+                  details: "You didn't provide a city-name to geolocate"
+                }
+              }
+            )
   end
 end

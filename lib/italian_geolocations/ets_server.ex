@@ -1,4 +1,12 @@
 defmodule ItalianGeolocations.EtsServer do
+  @moduledoc """
+    A module providing an in-memory database using an ETS table.
+    ItalianGeolocations.EtsServer uses the GenServer behavior
+    It initializes and populates an ets_table named :coordinate_comuni
+    with records (as tuples) containing the name of italian cities and their coordinates.
+    The first element of the record tuple is the downcased city name, which is used
+    to lookup city's data by matching it with the downcased request's parameter.
+  """
   use GenServer
 
   @data_file "data/coordinate_comuni.csv"
@@ -46,23 +54,19 @@ defmodule ItalianGeolocations.EtsServer do
     parseAndInsert(rows, ets_table_name)
   end
 
+  defp parseAndInsert([], _ets_table_name), do: { :ok }
   defp parseAndInsert(rows, ets_table_name) do
-    case rows do
-      [] -> {:ok}
+    [current | remaining] = rows
+    entry = String.split(current, ",")
+    ets_record = {
+      String.downcase(Enum.at(entry, 0)), # downcased city name as the table key
+      Enum.at(entry, 0),                  # actual city name with appropriate casing
+      Enum.at(entry, 1),                  # latitude
+      Enum.at(entry, 2),                  # longitude
+    }
 
-      _ ->
-        [current | remaining] = rows
-        entry = String.split(current, ",")
-        ets_record = {
-          String.downcase(Enum.at(entry, 0)), # downcased city name as the table key
-          Enum.at(entry, 0),                  # actual city name with appropriate casing
-          Enum.at(entry, 1),                  # latitude
-          Enum.at(entry, 2),                  # longitude
-        }
-
-        :ets.insert(ets_table_name, ets_record)
-        parseAndInsert(remaining, ets_table_name)
-    end
+    :ets.insert(ets_table_name, ets_record)
+    parseAndInsert(remaining, ets_table_name)
   end
 
 

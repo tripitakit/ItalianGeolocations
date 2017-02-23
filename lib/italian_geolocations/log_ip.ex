@@ -1,6 +1,9 @@
 defmodule ItalianGeolocations.LogIp do
+  @moduledoc """
+    A module plug that adds the requests' remote ip to the logger file backend
+  """
 
-  def init(_), do: nil
+  def init(_), do: {:ok}
 
   def call(conn, _) do
     remote_ip =
