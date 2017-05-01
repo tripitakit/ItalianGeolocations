@@ -12,7 +12,7 @@ ItalianGeolocations API serves Italian cities' geolocations
 
 Examples:
 
-### http://www.codestep.it:4000/api/geolocate/milano
+###  /api/geolocate/milano
 
 Status 200 OK
 ~~~
@@ -27,7 +27,7 @@ Status 200 OK
   }
 ~~~
 
-### http://www.codestep.it:4000/api/geolocate/tokyo
+###  /api/geolocate/tokyo
 
 Status 200 OK
 ~~~
@@ -42,7 +42,7 @@ Status 200 OK
   }
 ~~~
 
-### http://www.codestep.it:4000/api/geolocate
+###  /api/geolocate
 
 Status 400 BAD REQUEST
 ~~~
@@ -57,7 +57,7 @@ Status 400 BAD REQUEST
   }
 ~~~
 
-### http://www.codestep.it:4000/api/foo
+###  /api/foo
 
 Status 404 NOT FOUND
 ~~~
@@ -72,7 +72,7 @@ Status 404 NOT FOUND
   }
 ~~~
 
-### http://www.codestep.it:4000/bar
+###  /bar
 
 Status 404 NOT FOUND
 ~~~
